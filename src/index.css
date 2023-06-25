@@ -1,0 +1,4140 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: rgb(199, 196, 194);
+  /* background-color: hsl(218, 28%, 13%); */
+  width: 90%;
+  height: 100%;
+}
+
+#Loading {
+  position: fixed;
+  left: 40%;
+  top: 38%;
+}
+
+#AppIcon{
+  width:50%;
+  animation-name: ZoomIn;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+#MainContainer{
+  display: none;
+}
+
+
+@media only screen and (min-width:850px) {
+  #HistoryImg {
+    display: none;
+  }
+
+  #HistoryReplaceImg {
+    display: none;
+  }
+
+  #HistoryReplaceImgSiC {
+    display: none;
+  }
+
+  #HistoryImgSiC {
+    display: none;
+  }
+
+  #CurrentCalc {
+    font-weight: bold;
+    font-size: x-large;
+    position: fixed;
+    top: 1%;
+    left: 6%;
+  }
+
+  #History {
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-decoration-color: rgb(184, 6, 6);
+    text-underline-offset: 10px;
+    text-decoration-thickness: 4px;
+    font-weight: bold;
+    font-size: large;
+    position: fixed;
+    top: 2.5%;
+    right: 16%;
+  }
+
+  #Memory {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    position: fixed;
+    top: 2.5%;
+    right: 5%;
+  }
+
+
+  #Name {
+    position: fixed;
+    left: 2%;
+    top: 5%;
+  }
+
+  #HamBurger {
+    cursor: pointer;
+    top: 5%;
+    width: 30%;
+  }
+
+  #CloseBut {
+    cursor: pointer;
+    position: fixed;
+    top: 5%;
+    left: 2%;
+    width: 2%;
+  }
+
+  #HContainer {
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 74.2%;
+    position: relative;
+    top: 80px;
+    left: 32%;
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  #HInfo {
+    position: relative;
+    right: 95%;
+  }
+
+  #HistoryCont {
+    text-align: right;
+    position: relative;
+    right: 95%;
+  }
+
+  #HistoryDisplay2 {
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  #Delete {
+    z-index: 1;
+    display: none;
+    cursor: pointer;
+    border: 2px solid rgb(226, 223, 223);
+    border-radius: 5px;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 75%;
+  }
+
+  #Delete:hover {
+    background-color: rgb(226, 223, 223);
+    border: 2px solid rgb(102, 101, 101);
+  }
+
+  #MContainer {
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 74.2%;
+    position: relative;
+    top: 80px;
+    left: 32%;
+    animation-name: FadeIn2;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  #MInfo {
+    position: relative;
+    right: 95%;
+  }
+
+  #MemoryCont {
+    text-align: right;
+    position: relative;
+    right: 95%;
+  }
+
+  #MemoryDisplay {
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  #MDelete {
+    z-index: 1;
+    display: none;
+    cursor: pointer;
+    border: 2px solid rgb(226, 223, 223);
+    border-radius: 5px;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 75%;
+  }
+
+  #MDelete:hover {
+    background-color: rgb(226, 223, 223);
+    border: 2px solid rgb(102, 101, 101);
+  }
+
+
+  @keyframes FadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(0%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(10%);
+    }
+  }
+
+  @keyframes FadeIn2 {
+    0% {
+      opacity: 0;
+      transform: translateX(10%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+
+  #NContainer {
+    display: none;
+    position: fixed;
+    left:0;
+    z-index: 1;
+    width: 20%;
+    height: 100%;
+    background-color: rgb(199, 196, 194);
+    border-right: 1px solid rgb(190, 187, 187);
+    border-top-right-radius: 5px;
+    animation-name: SlideIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes SlideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes SlideOut {
+    0% {
+      transform: translateX(5%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  #NName {
+    position: relative;
+    top: 6%;
+    left: 2%;
+    font-weight: bold;
+  }
+
+  #NCalcCon {
+    border-left: 2px solid rgb(184, 6, 6);
+    position: relative;
+    top: 100px;
+  }
+
+  #NCalcCon:hover {
+    background-color: rgba(190, 187, 187, 0.521);
+  }
+
+  #NCalc {
+    cursor: pointer;
+    height: 30px;
+    position: relative;
+    top: -12px;
+    left: 10%;
+  }
+
+  #NCalcCon2 {
+    position: relative;
+    top: 150px;
+  }
+
+  #NCalcCon2:hover {
+    background-color: rgba(190, 187, 187, 0.521);
+  }
+
+  #NCalc2 {
+    cursor: pointer;
+    height: 30px;
+    position: relative;
+    top: -10px;
+    left: 10%;
+  }
+
+  #StandardImg {
+    position: relative;
+    top: 25px;
+    width: 8%;
+    height: 100%;
+  }
+
+  #ScientificImg {
+    position: relative;
+    top: 25px;
+    width: 8%;
+    height: 100%;
+  }
+
+  #SCContainer {
+    z-index: -1;
+    position: fixed;
+    bottom: -100px;
+    width: 73%;
+    height: 100%;
+  }
+
+  #SCDisplay {
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 350%;
+    font-weight: bold;
+    position: fixed;
+    bottom: 470px;
+    right: 26.2%;
+    height: 65px;
+  }
+
+
+  #SiCDisplay {
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 350%;
+    font-weight: bold;
+    position: fixed;
+    bottom: 470px;
+    right: 26.2%;
+    height: 65px;
+  }
+
+  #SiCContainer {
+    display: none;
+    z-index: -1;
+    position: fixed;
+    bottom: -45px;
+    width: 73%;
+    height: 100%;
+  }
+
+  #KeysCon {
+    width: 72.5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 0;
+    animation-name: ZoomIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes ZoomIn {
+    0% {
+      transform: scale(10%);
+    }
+
+    100% {
+      transform: scale(100%);
+    }
+  }
+
+  #UpperKeyCon {
+    width: 72.8%;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 450px;
+    left: 5%;
+  }
+
+  #SiCKeysCon {
+    width: 72.5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 0;
+    animation-name: ZoomIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  #SiCUpperKeyCon {
+    width: 72.8%;
+    z-index: 1;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 400px;
+    left: 5%;
+  }
+
+  #SiCMiddleKeyCon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 350.5px;
+    background-color: rgba(226, 223, 223, 0.527);
+    height: 40px;
+    width: 72.8%;
+    animation-name: ZoomIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  #Sin1 {
+    font-size: large;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 0%;
+    width: 50px;
+  }
+
+  #Sin1:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Sin2 {
+    font-size: large;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 2%;
+    width: 50px;
+  }
+
+  #Sin2:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Sin3 {
+    font-size: large;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 4%;
+    width: 50px;
+  }
+
+  #Sin3:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+
+  #Cos1 {
+    font-size: large;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 6%;
+    width: 50px;
+  }
+
+  #Cos1:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Cos2 {
+    font-size: large;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 8%;
+    width: 50px;
+  }
+
+  #Cos2:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Cos3 {
+    font-size: large;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+    width: 50px;
+  }
+
+  #Cos3:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+
+
+  #Tan1 {
+    font-size: large;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 12%;
+    width: 50px;
+  }
+
+  #Tan1:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Tan2 {
+    font-size: large;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 14%;
+    width: 50px;
+  }
+
+  #Tan2:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Tan3 {
+    font-size: large;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 16%;
+    width: 50px;
+  }
+
+  #Tan3:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+
+  /* #Trig{
+    background-color: rgba(226, 223, 223, 0.527);
+    border: 1px thin rgba(226, 223, 223, 0.527);
+    font-size: large;
+    width: 15%;
+  } */
+
+  #MC {
+    opacity: 0.3;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+  }
+
+  #MCSiC {
+    opacity: 0.3;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+  }
+
+  /* #MC:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+  #MR {
+    opacity: 0.3;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+  }
+
+  #MRSiC {
+    opacity: 0.3;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+  }
+
+  /* #MR:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+  #Mplus {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 20%;
+  }
+
+  #MSiCplus {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 20%;
+  }
+
+
+  /* #Mplus:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+  #Mminus {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 30%;
+  }
+
+  #MSiCminus {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 30%;
+  }
+
+  /* #Mminus:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+  #MS {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 40%;
+  }
+
+  #MSSiC {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 40%;
+  }
+
+
+  /* #MS:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+  #M {
+    display: none;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+  }
+
+  #MSiC {
+    display: none;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+  }
+
+  #Key {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key2 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key2:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key3 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key3:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key4 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key4:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key5 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key5:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key6 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key6:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key7 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key7:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key8 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key8:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key9 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key9:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+
+  #Key10 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key10:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key11 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key11:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key12 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key12:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key13 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key13:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key14 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key14:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key15 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key15:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key16 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key16:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key17 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key17:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key18 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key18:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key19 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key19:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+
+  #Key20 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #Key20:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key21 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key21:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key22 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key22:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key23 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #Key23:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #Key24 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(184, 6, 6, 0.651);
+  }
+
+  /* #Key24:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+
+
+  #SiCKey {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey2 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey2:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey3 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey3:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey4 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey4:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey5 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey5:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey6 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey6:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey7 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey7:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey8 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey8:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey9 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey9:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+
+  #SiCKey10 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey10:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey11 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey11:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey12 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey12:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey13 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey13:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey14 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey14:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey15 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey15:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey16 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey16:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey17 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey17:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey18 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey18:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey19 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey19:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+
+  #SiCKey20 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey20:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey21 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey21:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey22 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey22:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey23 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey23:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey24 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey24:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey25 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey25:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey26 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey26:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey27 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey27:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey28 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey28:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey29 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey29:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey30 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey30:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey31 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 6.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey31:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey32 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 6.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey32:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey33 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 6.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey33:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey34 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 6.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey34:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey35 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 6.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(184, 6, 6, 0.651);
+  }
+
+  /* #SiCKey35:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+}
+
+
+
+
+@media only screen and (max-width:850px) {
+  #HistoryImg {
+    display: none;
+  }
+
+  #HistoryReplaceImg {
+    display: none;
+  }
+
+  #HistoryReplaceImgSiC {
+    display: none;
+  }
+
+  #HistoryImgSiC {
+    display: none;
+  }
+
+  #CurrentCalc {
+    font-weight: bold;
+    font-size: x-large;
+    position: fixed;
+    top: 1%;
+    left: 6%;
+  }
+
+  #History {
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-decoration-color: rgb(184, 6, 6);
+    text-underline-offset: 10px;
+    text-decoration-thickness: 4px;
+    font-weight: bold;
+    font-size: large;
+    position: fixed;
+    top: 2.5%;
+    right: 20%;
+  }
+
+  #Memory {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    position: fixed;
+    top: 2.5%;
+    right: 5%;
+  }
+
+
+  #Name {
+    position: fixed;
+    left: 2%;
+    top: 5%;
+  }
+
+  #HamBurger {
+    cursor: pointer;
+    top: 5%;
+    width: 30%;
+  }
+
+  #CloseBut {
+    cursor: pointer;
+    position: fixed;
+    top: 5%;
+    left: 2%;
+    width: 5%;
+  }
+
+  #HContainer {
+    width: 35%;
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 74.2%;
+    position: relative;
+    top: 80px;
+    left: 32%;
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  #HInfo {
+    position: relative;
+    right: 95%;
+  }
+
+  #HistoryCont {
+    text-align: right;
+    position: relative;
+    right: 95%;
+  }
+
+  #HistoryDisplay2 {
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  #Delete {
+    z-index: 1;
+    display: none;
+    cursor: pointer;
+    border: 2px solid rgb(226, 223, 223);
+    border-radius: 5px;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 65%;
+  }
+
+  #Delete:hover {
+    background-color: rgb(226, 223, 223);
+    border: 2px solid rgb(102, 101, 101);
+  }
+
+  #MContainer {
+    width: 35%;
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 74.2%;
+    position: relative;
+    top: 80px;
+    left: 32%;
+    animation-name: FadeIn2;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  #MInfo {
+    position: relative;
+    right: 95%;
+  }
+
+  #MemoryCont {
+    text-align: right;
+    position: relative;
+    right: 95%;
+  }
+
+  #MemoryDisplay {
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  #MDelete {
+    z-index: 1;
+    display: none;
+    cursor: pointer;
+    border: 2px solid rgb(226, 223, 223);
+    border-radius: 5px;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 65%;
+  }
+
+  #MDelete:hover {
+    background-color: rgb(226, 223, 223);
+    border: 2px solid rgb(102, 101, 101);
+  }
+
+
+  @keyframes FadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(0%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(10%);
+    }
+  }
+
+  @keyframes FadeIn2 {
+    0% {
+      opacity: 0;
+      transform: translateX(10%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+
+  #NContainer {
+    display: none;
+    position: fixed;
+    left:0;
+    z-index: 1;
+    width: 40%;
+    height: 100%;
+    background-color: rgb(199, 196, 194);
+    border-right: 1px solid rgb(190, 187, 187);
+    border-top-right-radius: 5px;
+    animation-name: SlideIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes SlideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes SlideOut {
+    0% {
+      transform: translateX(5%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  #NName {
+    position: relative;
+    top: 6%;
+    left: 2%;
+    font-weight: bold;
+  }
+
+  #NCalcCon {
+    border-left: 2px solid rgb(184, 6, 6);
+    position: relative;
+    top: 100px;
+  }
+
+  #NCalcCon:hover {
+    background-color: rgba(190, 187, 187, 0.521);
+  }
+
+  #NCalc {
+    cursor: pointer;
+    height: 30px;
+    position: relative;
+    top: -12px;
+    left: 10%;
+  }
+
+  #NCalcCon2 {
+    position: relative;
+    top: 150px;
+  }
+
+  #NCalcCon2:hover {
+    background-color: rgba(190, 187, 187, 0.521);
+  }
+
+  #NCalc2 {
+    cursor: pointer;
+    height: 30px;
+    position: relative;
+    top: -10px;
+    left: 10%;
+  }
+
+  #StandardImg {
+    position: relative;
+    top: 25px;
+    width: 8%;
+    height: 100%;
+  }
+
+  #ScientificImg {
+    position: relative;
+    top: 25px;
+    width: 8%;
+    height: 100%;
+  }
+
+  #SCContainer {
+    z-index: -1;
+    position: fixed;
+    bottom: -100px;
+    width: 63%;
+    height: 100%;
+  }
+
+  #SCDisplay {
+    width: 90%;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 250%;
+    font-weight: bold;
+    position: fixed;
+    bottom: 470px;
+    right: 37%;
+    height: 65px;
+  }
+
+  #SiCDisplay {
+    width: 90%;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 200%;
+    font-weight: bold;
+    position: fixed;
+    bottom: 470px;
+    right: 37%;
+    height: 65px;
+  }
+
+  #SiCContainer {
+    display: none;
+    z-index: -1;
+    position: fixed;
+    bottom: -45px;
+    width: 63%;
+    height: 100%;
+  }
+
+  #KeysCon {
+    width: 62%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 0;
+    animation-name: ZoomIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes ZoomIn {
+    0% {
+      transform: scale(10%);
+    }
+
+    100% {
+      transform: scale(100%);
+    }
+  }
+
+  #UpperKeyCon {
+    width: 62.3%;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 450px;
+    left: 5%;
+  }
+
+  #SiCKeysCon {
+    width: 62%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 0;
+    animation-name: ZoomIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  #SiCUpperKeyCon {
+    width: 62.3%;
+    z-index: 1;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 400px;
+    left: 5%;
+  }
+
+  #SiCMiddleKeyCon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 350.5px;
+    background-color: rgba(226, 223, 223, 0.527);
+    height: 40px;
+    width: 62.3%;
+    animation-name: ZoomIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  #Sin1 {
+    font-size: 90%;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 0%;
+    width: 40px;
+  }
+
+  #Sin1:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Sin2 {
+    font-size: 90%;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 1%;
+    width: 40px;
+  }
+
+  #Sin2:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Sin3 {
+    font-size: 90%;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 2%;
+    width: 40px;
+  }
+
+  #Sin3:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+
+  #Cos1 {
+    font-size: 90%;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 3%;
+    width: 40px;
+  }
+
+  #Cos1:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Cos2 {
+    font-size: 90%;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 4%;
+    width: 40px;
+  }
+
+  #Cos2:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Cos3 {
+    font-size: 90%;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 5%;
+    width: 40px;
+  }
+
+  #Cos3:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+
+
+  #Tan1 {
+    font-size: 90%;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 6%;
+    width: 40px;
+  }
+
+  #Tan1:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Tan2 {
+    font-size: 90%;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 7%;
+    width: 40px;
+  }
+
+  #Tan2:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+  #Tan3 {
+    font-size: 90%;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 8%;
+    width: 40px;
+  }
+
+  #Tan3:hover {
+    border: 1px solid rgb(102, 101, 101);
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+  }
+
+
+  /* #Trig{
+    background-color: rgba(226, 223, 223, 0.527);
+    border: 1px thin rgba(226, 223, 223, 0.527);
+    font-size: large;
+    width: 15%;
+  } */
+
+  #MC {
+    opacity: 0.3;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+  }
+
+  #MCSiC {
+    opacity: 0.3;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+  }
+
+  /* #MC:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+  #MR {
+    opacity: 0.3;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+  }
+
+  #MRSiC {
+    opacity: 0.3;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 10%;
+  }
+
+  /* #MR:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+  #Mplus {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 20%;
+  }
+
+  #MSiCplus {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 20%;
+  }
+
+
+  /* #Mplus:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+  #Mminus {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 30%;
+  }
+
+  #MSiCminus {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 30%;
+  }
+
+  /* #Mminus:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+  #MS {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 40%;
+  }
+
+  #MSSiC {
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 40%;
+  }
+
+
+  /* #MS:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+  #M {
+    display: none;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+  }
+
+  #MSiC {
+    display: none;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+  }
+
+  #Key {
+    font-size: larger;
+    text-align: center;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key2 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key2:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key3 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key3:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key4 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key4:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key5 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key5:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key6 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key6:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key7 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key7:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key8 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key8:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key9 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key9:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+
+  #Key10 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key10:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key11 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key11:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key12 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key12:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key13 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key13:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key14 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key14:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key15 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key15:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key16 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key16:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key17 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key17:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key18 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key18:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key19 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key19:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+
+  #Key20 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  #Key20:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key21 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key21:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key22 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.1%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key22:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key23 {
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.2%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  #Key23:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #Key24 {
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.3%;
+    width: 25%;
+    height: 70px;
+    background-color: rgba(184, 6, 6, 0.651);
+  }
+
+  #Key24:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  }
+
+  #SiCKey {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey2 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey2:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey3 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey3:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey4 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey4:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey5 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey5:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey6 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey6:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey7 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey7:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey8 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey8:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey9 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey9:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+
+  #SiCKey10 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 1.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey10:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey11 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey11:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey12 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey12:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey13 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey13:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey14 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey14:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey15 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 2.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey15:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey16 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey16:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey17 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey17:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey18 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey18:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey19 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey19:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+
+  #SiCKey20 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 3.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey20:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey21 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey21:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey22 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey22:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey23 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey23:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey24 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey24:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey25 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 4.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey25:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey26 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey26:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey27 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey27:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey28 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey28:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey29 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey29:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey30 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 5.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey30:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey31 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 6.4px;
+    width: 20%;
+    height: 50px;
+    background-color: rgb(226, 223, 223);
+  }
+
+  /* #SiCKey31:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey32 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 6.4px;
+    left: 0.1%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey32:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey33 {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 6.4px;
+    left: 0.2%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey33:hover {
+    background-color: rgb(184, 6, 6);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey34 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 6.4px;
+    left: 0.3%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.788);
+  }
+
+  /* #SiCKey34:hover {
+    background-color: rgba(190, 187, 187, 0.925);
+    box-shadow: 0 0 5px rgb(190, 187, 187);
+    cursor: pointer;
+  } */
+
+  #SiCKey35 {
+    cursor: pointer;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+    top: 6.4px;
+    left: 0.4%;
+    width: 20%;
+    height: 50px;
+    background-color: rgba(184, 6, 6, 0.651);
+  }
+}
+
+@media only screen and (max-width:700px) {
+  #SCDisplay {
+    font-size: 200%;
+    top: 120px;
+  }
+
+  #SiCDisplay {
+    font-size: 200%;
+    top: 120px;
+  }
+
+  #CurrentCalc {
+    font-weight: bold;
+    font-size: x-large;
+    position: fixed;
+    top: 1%;
+    left: 10%;
+  }
+
+  #MemoryDisplay {
+    font-weight: bold;
+    font-size: large;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  #History {
+    display: none;
+  }
+
+  #Memory {
+    display: none;
+  }
+
+  #HContainer {
+    display: none;
+    border-top: 1px solid rgba(104, 102, 101, 0.514);
+    background-color: rgb(199, 196, 194);
+    width: 100%;
+    height: 95%;
+    margin-left: 0%;
+    position: fixed;
+    bottom: 0px;
+    left: 0%;
+    animation-name: FadeIn2;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  #HInfo {
+    position: relative;
+    right: 0%;
+  }
+
+  #HistoryCont {
+    text-align: right;
+    position: relative;
+    right: 3%;
+  }
+
+  #HistoryDisplay2 {
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  #Delete {
+    z-index: 1;
+    display: none;
+    bottom: 0;
+    left: 1%;
+  }
+
+  #MContainer {
+    border-top: 1px solid rgba(104, 102, 101, 0.514);
+    background-color: rgb(199, 196, 194);
+    width: 100%;
+    height: 95%;
+    margin-left: 0%;
+    position: fixed;
+    bottom: 0px;
+    left: 0%;
+    animation-name: FadeIn2;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  #MInfo {
+    position: relative;
+    right: 0%;
+  }
+
+  #MemoryCont {
+    text-align: right;
+    position: relative;
+    right: 3%;
+  }
+
+  #MemoryDisplay {
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  #MDelete {
+    z-index: 1;
+    display: none;
+    bottom: 0;
+    left: 1%;
+  }
+
+
+  @keyframes FadeIn2 {
+    0% {
+      opacity: 0;
+      transform: translateY(150%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  #SCContainer {
+    width: 98%;
+    bottom: -95px;
+  }
+
+  #SiCContainer {
+    width: 98%;
+    bottom: -35px;
+  }
+
+  #SCDisplay {
+    position: fixed;
+    top: 80px;
+    width: 98%;
+    font-size: 200%;
+    right: 3%;
+  }
+
+  #SiCDisplay {
+    position: fixed;
+    top: 80px;
+    width: 98%;
+    font-size: 200%;
+    right: 3%;
+  }
+
+  #SiCKeysCon {
+    width: 98%;
+  }
+
+  #KeysCon {
+    width: 98%;
+  }
+
+  #SiCUpperKeyCon {
+    width: 98%;
+  }
+
+  #UpperKeyCon {
+    width: 98%;
+  }
+
+  #SiCMiddleKeyCon {
+    width: 98%;
+  }
+
+  #NContainer {
+    width: 50%;
+  }
+
+  #CloseBut {
+    width: 7%;
+  }
+
+  #M {
+    display: block;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+  }
+  
+
+  #MSiC {
+    display: block;
+    background-color: rgb(199, 196, 194);
+    border: 1px solid rgb(226, 223, 223);
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+  }
+
+  #HistoryImg {
+    overflow-y: scroll;
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    border: 2px solid rgb(226, 223, 223);
+    border-bottom-left-radius: 5px;
+  }
+
+  #HistoryImg:hover {
+    background-color: rgb(226, 223, 223);
+    border: 2px solid rgb(102, 101, 101);
+  }
+
+  #HistoryReplaceImg {
+    display: none;
+    height: 40px;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    border: 2px solid rgb(226, 223, 223);
+    border-bottom-left-radius: 5px;
+  }
+
+  #HistoryReplaceImg:hover {
+    background-color: rgb(226, 223, 223);
+    border: 2px solid rgb(102, 101, 101);
+  }
+
+  #HistoryImgSiC {
+    overflow-y: scroll;
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    border: 2px solid rgb(226, 223, 223);
+    border-bottom-left-radius: 5px;
+  }
+
+  #HistoryImgSiC:hover {
+    background-color: rgb(226, 223, 223);
+    border: 2px solid rgb(102, 101, 101);
+  }
+
+  #HistoryReplaceImgSiC {
+    display: none;
+    height: 40px;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    border: 2px solid rgb(226, 223, 223);
+    border-bottom-left-radius: 5px;
+  }
+
+  #HistoryReplaceImgSiC:hover {
+    background-color: rgb(226, 223, 223);
+    border: 2px solid rgb(102, 101, 101);
+  }
+}
+
+@media only screen and (max-width:425px) {
+  /* @media only screen and (max-width:600px) { */
+    #Sin1 {
+      font-size: 80%;
+      width: 35px;
+    }
+
+    #Sin2 {
+      font-size: 80%;
+      width: 35px;
+    }
+
+    #Sin3 {
+      font-size: 80%;
+      width: 35px;
+    }
+
+
+    #Cos1 {
+      font-size: 80%;
+      width: 35px;
+    }
+
+    #Cos2 {
+      font-size: 80%;
+      width: 35px;
+    }
+
+    #Cos3 {
+      font-size: 80%;
+      width: 35px;
+    }
+
+
+
+    #Tan1 {
+      font-size: 80%;
+      width: 35px;
+    }
+
+    #Tan2 {
+      font-size: 80%;
+      width: 35px;
+    }
+
+    #Tan3 {
+      font-size: 80%;
+      width: 35px;
+    }
+
+    #MR {
+      left: 5%;
+    }
+
+    #MRSiC {
+      left: 5%;
+    }
+
+    /* #MR:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+    #Mplus {
+      left: 10%;
+    }
+
+    #MSiCplus {
+      left: 10%;
+    }
+
+
+    /* #Mplus:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+    #Mminus {
+      left: 15%;
+    }
+
+    #MSiCminus {
+      left: 15%;
+    }
+
+    /* #Mminus:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+    #MS {
+      left: 20%;
+    }
+
+    #MSSiC {
+      left: 20%;
+    }
+
+
+    /* #MS:hover {
+  border: 1px solid rgb(102, 101, 101);
+  background-color: rgba(190, 187, 187, 0.925);
+  box-shadow: 0 0 5px rgb(190, 187, 187);
+} */
+
+    #M {
+      left: 25%;
+    }
+
+    #MSiC {
+      left: 25%;
+    }
+  }
+
+  @media only screen and (max-height:600px) {
+    #Key {
+      height: 50px;
+    }
+
+    #Key2 {
+      height: 50px;
+    }
+
+    #Key3 {
+      height: 50px;
+    }
+
+    #Key4 {
+      height: 50px;
+    }
+
+    #Key5 {
+      height: 50px;
+    }
+
+    #Key6 {
+      height: 50px;
+    }
+
+    #Key7 {
+      height: 50px;
+    }
+
+    #Key8 {
+      height: 50px;
+    }
+
+    #Key9 {
+      height: 50px;
+    }
+
+
+    #Key10 {
+      height: 50px;
+    }
+
+    #Key11 {
+      height: 50px;
+    }
+
+    #Key12 {
+      height: 50px;
+    }
+
+    #Key13 {
+      height: 50px;
+    }
+
+    #Key14 {
+      height: 50px;
+    }
+
+    #Key15 {
+      height: 50px;
+    }
+
+    #Key16 {
+      height: 50px;
+    }
+
+    #Key17 {
+      height: 50px;
+    }
+
+    #Key18 {
+      height: 50px;
+    }
+
+    #Key19 {
+      height: 50px;
+    }
+
+
+    #Key20 {
+      height: 50px;
+    }
+
+    #Key21 {
+      height: 50px;
+    }
+
+    #Key22 {
+      height: 50px;
+    }
+
+    #Key23 {
+      height: 50px;
+    }
+
+    #Key24 {
+      height: 50px;
+    }
+
+    #UpperKeyCon {
+      bottom: 320px;
+    }
+
+    #SCDisplay {
+      top: 100px;
+    }
+
+    #SiCDisplay {
+      top: 100px;
+    }
+
+    #CurrentCalc {
+      top: 0%;
+    }
+    /* #HContainer {
+      width: 100%;
+      height: 55%;
+      margin-left: 0%;
+      position: fixed;
+      top: 290px;
+    } */
+  /* } */
+}
+
+@media only screen and (max-height:570px) {
+  #SiCKey {
+    height: 40px;
+  }
+
+  #SiCKey2 {
+    height: 40px;
+  }
+
+  #SiCKey3 {
+    height: 40px;
+  }
+
+  #SiCKey4 {
+    height: 40px;
+  }
+
+  #SiCKey5 {
+    height: 40px;
+  }
+
+  #SiCKey6 {
+    height: 40px;
+  }
+
+  #SiCKey7 {
+    height: 40px;
+  }
+
+  #SiCKey8 {
+    height: 40px;
+  }
+
+  #SiCKey9 {
+    height: 40px;
+  }
+
+
+  #SiCKey10 {
+    height: 40px;
+  }
+
+  #SiCKey11 {
+    height: 40px;
+  }
+
+  #SiCKey12 {
+    height: 40px;
+  }
+
+  #SiCKey13 {
+    height: 40px;
+  }
+
+  #SiCKey14 {
+    height: 40px;
+  }
+
+  #SiCKey15 {
+    height: 40px;
+  }
+
+  #SiCKey16 {
+    height: 40px;
+  }
+
+  #SiCKey17 {
+    height: 40px;
+  }
+
+  #SiCKey18 {
+    height: 40px;
+  }
+
+  #SiCKey19 {
+    height: 40px;
+  }
+
+
+  #SiCKey20 {
+    height: 40px;
+  }
+
+  #SiCKey21 {
+    height: 40px;
+  }
+
+  #SiCKey22 {
+    height: 40px;
+  }
+
+  #SiCKey23 {
+    height: 40px;
+  }
+
+  #SiCKey24 {
+    height: 40px;
+  }
+
+  #SiCKey25 {
+    height: 40px;
+  }
+
+  #SiCKey26 {
+    height: 40px;
+  }
+
+  #SiCKey27 {
+    height: 40px;
+  }
+
+  #SiCKey28 {
+    height: 40px;
+  }
+
+  #SiCKey29 {
+    height: 40px;
+  }
+
+  #SiCKey30 {
+    height: 40px;
+  }
+
+  #SiCKey31 {
+    height: 40px;
+  }
+
+  #SiCKey32 {
+    height: 40px;
+  }
+
+  #SiCKey33 {
+    height: 40px;
+  }
+
+  #SiCKey34 {
+    height: 40px;
+  }
+
+  #SiCKey35 {
+    height: 40px;
+  }
+
+  #SiCUpperKeyCon {
+    bottom: 330px;
+  }
+
+  #SiCMiddleKeyCon {
+    bottom: 280px;
+  }
+  }
