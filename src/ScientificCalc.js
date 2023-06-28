@@ -1977,6 +1977,14 @@ export default function ScientificCalc() {
 
     }, 100);
 
+    // function deg2rad(radAngle) {
+    //     return radAngle * Math.PI / 180;
+    // }
+
+    // function sinh(arg) {
+    //     return (Math.exp(arg) - Math.exp(-arg)) / 2;
+    // }
+
     const SINE = () => {
         document.getElementById("SiCKey16").style.backgroundColor = "rgb(226, 223, 223)";
         document.getElementById("SiCKey16").style.boxShadow = "0 0 0";
@@ -1993,7 +2001,7 @@ export default function ScientificCalc() {
         SquareActive = 0;
         RootActive = 0;
         expression = "sin" + "₀" + "(" + currentDisplayValue + ")";
-        answer = Math.sin(eval(document.getElementById("SiCDisplay").innerHTML));
+        answer = Math.sin(eval(document.getElementById("SiCDisplay").innerHTML) * Math.PI / 180);
         document.getElementById("SiCDisplay").innerHTML = answer;
     }
 
@@ -2014,7 +2022,7 @@ export default function ScientificCalc() {
         SquareActive = 0;
         RootActive = 0;
         expression = "sin⁻¹" + "₀" + "(" + currentDisplayValue + ")";
-        answer = Math.asin(eval(document.getElementById("SiCDisplay").innerHTML));
+        answer = Math.asin(eval(document.getElementById("SiCDisplay").innerHTML)) * 180/Math.PI;
         document.getElementById("SiCDisplay").innerHTML = answer;
     }
 
@@ -2035,6 +2043,12 @@ export default function ScientificCalc() {
         SquareActive = 0;
         RootActive = 0;
         expression = "sinh" + "(" + currentDisplayValue + ")";
+        // var x = deg2rad(document.getElementById("SiCDisplay").innerHTML);
+        // answer = sinh(x);
+        // console.log((Math.sinh(eval(document.getElementById("SiCDisplay").innerHTML)) * 180 / Math.PI));
+        // console.log(Math.sinh(eval(document.getElementById("SiCDisplay").innerHTML)) * Math.PI / 180);
+        // console.log(Math.sinh(eval(document.getElementById("SiCDisplay").innerHTML * Math.PI / 180)));
+        // console.log(Math.sinh(eval(document.getElementById("SiCDisplay").innerHTML) * 180/Math.PI));
         answer = Math.sinh(eval(document.getElementById("SiCDisplay").innerHTML));
         document.getElementById("SiCDisplay").innerHTML = answer;
     }
@@ -2056,7 +2070,7 @@ export default function ScientificCalc() {
         SquareActive = 0;
         RootActive = 0;
         expression = "cos" + "₀" + "(" + currentDisplayValue + ")";
-        answer = Math.cos(eval(document.getElementById("SiCDisplay").innerHTML));
+        answer = Math.cos(eval(document.getElementById("SiCDisplay").innerHTML) * Math.PI / 180);
         document.getElementById("SiCDisplay").innerHTML = answer;
     }
 
@@ -2077,7 +2091,7 @@ export default function ScientificCalc() {
         SquareActive = 0;
         RootActive = 0;
         expression = "cos⁻¹" + "₀" + "(" + currentDisplayValue + ")";
-        answer = Math.acos(eval(document.getElementById("SiCDisplay").innerHTML));
+        answer = Math.acos(eval(document.getElementById("SiCDisplay").innerHTML)) * 180/Math.PI;
         document.getElementById("SiCDisplay").innerHTML = answer;
     }
 
@@ -2119,7 +2133,7 @@ export default function ScientificCalc() {
         SquareActive = 0;
         RootActive = 0;
         expression = "tan" + "₀" + "(" + currentDisplayValue + ")";
-        answer = Math.tan(eval(document.getElementById("SiCDisplay").innerHTML));
+        answer = Math.tan(eval(document.getElementById("SiCDisplay").innerHTML) * Math.PI / 180);
         document.getElementById("SiCDisplay").innerHTML = answer;
     }
 
@@ -2140,7 +2154,7 @@ export default function ScientificCalc() {
         SquareActive = 0;
         RootActive = 0;
         expression = "tan⁻¹" + "₀" + "(" + currentDisplayValue + ")";
-        answer = Math.atan(eval(document.getElementById("SiCDisplay").innerHTML));
+        answer = Math.atan(eval(document.getElementById("SiCDisplay").innerHTML)) * 180/Math.PI;
         document.getElementById("SiCDisplay").innerHTML = answer;
     }
 
