@@ -1,9 +1,8 @@
-let cacheData = "MyAppCache";
+let cacheData = "CalculatorAppCache";
 this.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(cacheData).then((cache) => {
             cache.addAll([
-                '/static/js/bundle.js',
                 '/static/js/main.45ef0e68.js',
                 '/static/css/main.ec5d983e.css',
                 '/static/media/StandardCalc.f8b1fcf35419384d860a.png',
